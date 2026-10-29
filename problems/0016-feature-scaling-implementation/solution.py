@@ -1,16 +1,21 @@
-import numpy as np
-def feature_scaling(data: np.ndarray) -> (np.ndarray, np.ndarray):
-	# Your code here
-	
-	
-	mean = np.mean(data, axis=0, keepdims = True)
-	std = np.std(data, axis=0, keepdims = True)
-	std = np.where(std == 0, 1, std)
-	standardized_data = (data - mean)/std
+import torch
 
-	minV = np.min(data, axis=0, keepdims = True)
-	maxV = np.max(data, axis=0, keepdims = True)
-	scale = maxV - minV
-	scale = np.where(scale == 0, 1, scale)
-	normalized_data = (data - minV)/scale
-	return standardized_data, normalized_data
+def feature_scaling(data) -> tuple[torch.Tensor, torch.Tensor]:
+    """
+    Standardize and Min-Max normalize input data using PyTorch.
+    Input: Tensor or convertible of shape (m,n).
+    Returns (standardized_data, normalized_data), both rounded to 4 decimals.
+    """
+    data_t = torch.as_tensor(data, dtype=torch.float)
+    # Your implementation here
+    mean = torch.mean(data_t, dim=0)
+    std = torch.std(data_t, dim = 0, correction = 0)
+    std = torch.where(std == 0, 1, std)
+    std_data = (data_t - mean)/std
+
+    minV = torch.min(data_t, dim=0).values 
+    maxV = torch.max(data_t, dim = 0).values
+    scale = maxV - minV
+    scale = torch.where(scale == 0, 1, scale)
+    scale_data = (data_t - minV)/scale
+    return torch.round(std_data, decimals = 4), torch.round(scale_data, decimals = 4)
