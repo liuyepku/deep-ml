@@ -1,7 +1,16 @@
+import torch
+import torch.nn.functional as F
 
-import numpy as np
+def rmse(y_true: torch.Tensor, y_pred: torch.Tensor) -> float:
+    """
+    Calculate Root Mean Square Error (RMSE) between actual and predicted values.
 
-def rmse(y_true, y_pred):
-	# Write your code here
-	rmse_res = np.sqrt(np.sum((y_pred - y_true)**2)/y_true.size)
-	return round(rmse_res,3)
+    Args:
+        y_true: Tensor of actual values.
+        y_pred: Tensor of predicted values.
+
+    Returns:
+        RMSE value rounded to three decimal places.
+    """
+    # Write your code here
+    return torch.sqrt(torch.mean((y_pred - y_true)**2)).item()
