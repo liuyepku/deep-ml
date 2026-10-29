@@ -1,26 +1,29 @@
-import numpy as np
+import torch
 
-def linear_regression_gradient_descent(X: np.ndarray, y: np.ndarray, alpha: float, iterations: int) -> np.ndarray:
+def linear_regression_gradient_descent(X, y, alpha, iterations) -> torch.Tensor:
     """
-    Perform linear regression using gradient descent.
+    Perform linear regression using gradient descent with PyTorch autograd.
 
     Args:
-        X: Feature matrix of shape (m, n) where first column is all ones (for intercept)
-        y: Target vector of shape (m,)
+        X: Feature matrix (m, n) - can be tensor or array-like
+        y: Target vector (m,) - can be tensor or array-like  
         alpha: Learning rate
         iterations: Number of gradient descent iterations
     
     Returns:
-        Learned weights as a 1D array of shape (n,)
+        Learned weights as a 1D tensor of shape (n,)
     """
-    m, n = X.shape
-    y = y.reshape(-1, 1)  # Ensure y is a column vector
-    theta = np.zeros((n, 1))  # Initialize weights to zeros
-
-    # Your code here: implement gradient descent
+    X_t = torch.as_tensor(X, dtype=torch.float32)
+    y_t = torch.as_tensor(y, dtype=torch.float32).reshape(-1, 1)
+    m, n = X_t.shape
+    theta = torch.zeros((n, 1), requires_grad=True)
+    
+    # Your code here: use autograd to compute gradients
     for i in range(iterations):
-        pred = X @ theta
-        grad = X.T @ (pred - y) / m 
-        theta-=alpha*grad
-
-    return theta.flatten()
+        pred = X_t @ theta
+        loss = ((y_t - pred)**2).mean()/2
+        loss.backward()
+        with torch.no_grad() as var:
+            theta-=alpha * theta.grad
+        theta.grad.zero_()
+    return theta.detach().flatten()
