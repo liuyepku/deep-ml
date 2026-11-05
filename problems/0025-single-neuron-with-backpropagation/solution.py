@@ -1,25 +1,42 @@
+import torch
+import torch.nn as nn
 import numpy as np
-def train_neuron(features: np.ndarray, labels: np.ndarray, initial_weights: np.ndarray, initial_bias: float, learning_rate: float, epochs: int) -> (np.ndarray, float, list[float]):
-	X = np.array(features)
-	y = np.array(labels)
-	w = np.array(initial_weights)
-	b = float(initial_bias)
-	mse_values = []
-	m = len(labels)
 
-	for i in range(epochs):
-		pred = X @ w + b 
-		prob = 1 / (1 + np.exp(-pred))
 
-		mse = np.mean((y - prob)**2)
-		mse_values.append(np.round(mse, 4))
+def train_neuron(features: torch.Tensor, labels: torch.Tensor, initial_weights: torch.Tensor, initial_bias: float, learning_rate: float, epochs: int) -> tuple[list[float], float, list[float]]:
+    """
+    Simulates a single neuron with sigmoid activation and trains it using
+    backpropagation with MSE loss via SGD.
 
-		delta = (2/m) * (prob - y) * prob * (1 - prob)
-		dw = X.T @ delta
-		db = np.sum(delta)
+    Args:
+        features: Input feature tensor of shape (n_samples, n_features)
+        labels: Binary label tensor of shape (n_samples,)
+        initial_weights: Initial weight tensor of shape (n_features,)
+        initial_bias: Initial bias scalar
+        learning_rate: Learning rate for SGD
+        epochs: Number of training epochs
 
-		w -= learning_rate*dw
-		b -= learning_rate*db
-	updated_weights = np.round(w, 4).tolist() 
-	updated_bias = np.round(b, 4).tolist()	
-	return updated_weights, updated_bias, mse_values
+    Returns:
+        Tuple of (updated_weights, updated_bias, mse_values) all rounded to 4 decimal places
+    """
+    # Your code here
+    X = torch.tensor(features, dtype = torch.float64)
+    y = torch.tensor(labels, dtype = torch.float64)
+    w = torch.tensor(initial_weights, dtype = torch.float64, requires_grad = True)
+    b = torch.tensor(initial_bias, dtype = torch.float64, requires_grad = True)
+    loss_values = []
+    for i in range(epochs):
+        prob = torch.sigmoid(X @ w + b)
+        
+        loss = ((y - prob)**2).mean()
+        loss_values.append(loss.item())
+
+        loss.backward()
+
+        with torch.no_grad():
+            w -= learning_rate* w.grad
+            b -= learning_rate* b.grad
+        w.grad.zero_()
+        b.grad.zero_()
+    
+    return (np.round(w.detach().numpy(), 4).tolist(), np.round(b.detach().numpy(), 4).tolist(), loss_values)
