@@ -2,7 +2,7 @@
 
 My machine learning practice from [Deep-ML](https://www.deep-ml.com). Every solution here was written by hand.
 
-**34** solved · 34 problems · 0 labs · 0 math
+**35** solved · 35 problems · 0 labs · 0 math
 
 ![Coverage](./coverage.svg)
 
@@ -46,6 +46,7 @@ My machine learning practice from [Deep-ML](https://www.deep-ml.com). Every solu
 | [Matrix Transformation ](https://www.deep-ml.com/problems/7) | medium | 2026-10-29 | [solution](problems/0007-matrix-transformation) |
 | [One Training Step](https://www.deep-ml.com/problems/1219) | medium | 2026-11-05 | [solution](problems/1219-one-training-step) |
 | [Single Neuron with Backpropagation](https://www.deep-ml.com/problems/25) | medium | 2026-11-05 | [solution](problems/0025-single-neuron-with-backpropagation) |
+| [Two-Layer MLP Forward Pass](https://www.deep-ml.com/problems/1225) | medium | 2026-11-05 | [solution](problems/1225-two-layer-mlp-forward-pass) |
 
 ---
 
