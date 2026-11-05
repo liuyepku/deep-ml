@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T06:45:39.864Z",
+  "generated_at": "2026-11-05T06:47:25.686Z",
   "items": {
     "problem:5": {
       "kind": "problem",
@@ -403,6 +403,19 @@
       "last_pushed_at": "2026-11-05T06:45:39.246Z",
       "language": "python",
       "lines": 24
+    },
+    "problem:1219": {
+      "kind": "problem",
+      "id": "1219",
+      "title": "One Training Step",
+      "difficulty": "medium",
+      "category": "Pytorch",
+      "url": "https://www.deep-ml.com/problems/1219",
+      "path": "problems/1219-one-training-step",
+      "first_solved_at": "2026-11-05T06:47:24.988Z",
+      "last_pushed_at": "2026-11-05T06:47:24.988Z",
+      "language": "python",
+      "lines": 26
     }
   }
 }
