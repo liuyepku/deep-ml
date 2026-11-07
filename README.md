@@ -2,7 +2,7 @@
 
 My machine learning practice from [Deep-ML](https://www.deep-ml.com). Every solution here was written by hand.
 
-**51** solved · 51 problems · 0 labs · 0 math
+**57** solved · 57 problems · 0 labs · 0 math
 
 ![Coverage](./coverage.svg)
 
@@ -32,6 +32,7 @@ My machine learning practice from [Deep-ML](https://www.deep-ml.com). Every solu
 | [Feature Scaling Implementation](https://www.deep-ml.com/problems/16) | easy | 2026-10-29 | [solution](problems/0016-feature-scaling-implementation) |
 | [Generate a Confusion Matrix for Binary Classification](https://www.deep-ml.com/problems/75) | easy | 2026-11-06 | [solution](problems/0075-generate-a-confusion-matrix-for-binary-classification) |
 | [Implement a Linear Layer Forward Pass with Matrix Multiplication](https://www.deep-ml.com/problems/883) | easy | 2026-11-05 | [solution](problems/0883-implement-a-linear-layer-forward-pass-with-matrix-multiplication) |
+| [Implement a Simple Residual Block with Shortcut Connection](https://www.deep-ml.com/problems/113) | easy | 2026-11-07 | [solution](problems/0113-implement-a-simple-residual-block-with-shortcut-connection) |
 | [Implement Precision Metric](https://www.deep-ml.com/problems/46) | easy | 2026-11-06 | [solution](problems/0046-implement-precision-metric) |
 | [Implement ReLU Activation Function](https://www.deep-ml.com/problems/42) | easy | 2026-11-05 | [solution](problems/0042-implement-relu-activation-function) |
 | [Implement Ridge Regression Loss Function](https://www.deep-ml.com/problems/43) | easy | 2026-11-06 | [solution](problems/0043-implement-ridge-regression-loss-function) |
@@ -54,8 +55,11 @@ My machine learning practice from [Deep-ML](https://www.deep-ml.com). Every solu
 | [Transpose of a Matrix](https://www.deep-ml.com/problems/2) | easy | 2026-10-29 | [solution](problems/0002-transpose-of-a-matrix) |
 | [Calculate Eigenvalues of a Matrix](https://www.deep-ml.com/problems/6) | medium | 2026-10-29 | [solution](problems/0006-calculate-eigenvalues-of-a-matrix) |
 | [Implement a ResNet Basic Block](https://www.deep-ml.com/problems/917) | medium | 2026-11-06 | [solution](problems/0917-implement-a-resnet-basic-block) |
+| [Implement a Transformer Encoder Block](https://www.deep-ml.com/problems/905) | medium | 2026-11-07 | [solution](problems/0905-implement-a-transformer-encoder-block) |
+| [Implement an LSTM Cell from Scratch](https://www.deep-ml.com/problems/907) | medium | 2026-11-07 | [solution](problems/0907-implement-an-lstm-cell-from-scratch) |
 | [Implement Gradient Descent Variants with MSE Loss](https://www.deep-ml.com/problems/47) | medium | 2026-11-06 | [solution](problems/0047-implement-gradient-descent-variants-with-mse-loss) |
 | [Implement Long Short-Term Memory (LSTM) Network](https://www.deep-ml.com/problems/59) | medium | 2026-11-06 | [solution](problems/0059-implement-long-short-term-memory-lstm-network) |
+| [Implement Masked Self-Attention](https://www.deep-ml.com/problems/107) | medium | 2026-11-07 | [solution](problems/0107-implement-masked-self-attention) |
 | [Implement Self-Attention Mechanism](https://www.deep-ml.com/problems/53) | medium | 2026-11-05 | [solution](problems/0053-implement-self-attention-mechanism) |
 | [Implementing a Simple RNN](https://www.deep-ml.com/problems/54) | medium | 2026-11-05 | [solution](problems/0054-implementing-a-simple-rnn) |
 | [Matrix times Matrix ](https://www.deep-ml.com/problems/9) | medium | 2026-10-29 | [solution](problems/0009-matrix-times-matrix) |
@@ -63,6 +67,8 @@ My machine learning practice from [Deep-ML](https://www.deep-ml.com). Every solu
 | [One Training Step](https://www.deep-ml.com/problems/1219) | medium | 2026-11-05 | [solution](problems/1219-one-training-step) |
 | [Single Neuron with Backpropagation](https://www.deep-ml.com/problems/25) | medium | 2026-11-05 | [solution](problems/0025-single-neuron-with-backpropagation) |
 | [Two-Layer MLP Forward Pass](https://www.deep-ml.com/problems/1225) | medium | 2026-11-05 | [solution](problems/1225-two-layer-mlp-forward-pass) |
+| [Implement Multi-Head Attention](https://www.deep-ml.com/problems/94) | hard | 2026-11-07 | [solution](problems/0094-implement-multi-head-attention) |
+| [Implement Multi-Head Self-Attention](https://www.deep-ml.com/problems/904) | hard | 2026-11-07 | [solution](problems/0904-implement-multi-head-self-attention) |
 
 ---
 
